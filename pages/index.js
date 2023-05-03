@@ -1,4 +1,5 @@
 import Head from "next/head";
+import Image from "next/image"
 import { renderMetaTags, useQuerySubscription } from "react-datocms";
 import Container from "@/components/container";
 import HeroPost from "@/components/hero-post";
@@ -7,6 +8,18 @@ import Layout from "@/components/layout";
 import MoreStories from "@/components/more-stories";
 import { request } from "@/lib/datocms";
 import { metaTagsFragment, responsiveImageFragment } from "@/lib/fragments";
+
+const rdclogo = () => (
+  <div className="rdc-logo">
+    <Image
+      src="/rdc-logo-01.png"
+      fill
+      sizes="(max-width: 320px) 19.375vw,
+              (max-width: 1200px) 50vw,
+              33vw"
+    />
+  </div>
+)
 
 export async function getStaticProps({ preview }) {
   const graphqlRequest = {

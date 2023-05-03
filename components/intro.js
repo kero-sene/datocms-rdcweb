@@ -1,25 +1,30 @@
+import Image from "next/image"
+
 export default function Intro() {
   return (
     <section className="flex-col md:flex-row flex items-center md:justify-between mt-16 mb-16 md:mb-12">
-      <h1 className="text-6xl md:text-8xl font-bold tracking-tighter leading-tight md:pr-8">
-        Blog.
-      </h1>
+      <a href="/">
+        <div className="rdc-logo">
+          <Image
+            src="/rdc-logo-01.svg"
+            width={125}
+            height={125}
+          />
+        </div>
+      </a>
       <h4 className="text-center md:text-left text-lg mt-5 md:pl-8">
-        A statically generated blog example using{" "}
         <a
-          href="https://nextjs.org/"
+          href="/"
           className="underline hover:text-success duration-200 transition-colors"
         >
-          Next.js
-        </a>{" "}
-        and{" "}
+          home
+        </a>{"\t "}
         <a
-          href="https://www.datocms.com/"
+          href="/about"
           className="underline hover:text-success duration-200 transition-colors"
         >
-          DatoCMS
+          about
         </a>
-        .
       </h4>
     </section>
   );
